@@ -1,0 +1,10 @@
+/*
+.container{ border: 3px solid red; }
+.box { background: green; height: 60px; }
+
+.content { background: yellow; height: 60px; color: #fff; }*/
+
+.inner img {width: 100%; }
+.product { margin: 15px 0 ;}
+
+body { padding-top: 50px; }

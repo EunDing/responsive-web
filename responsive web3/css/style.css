@@ -1,0 +1,36 @@
+* { margin:0; padding:0; }
+img {vertical-align: top; }
+
+/*
+모바일 퍼스트 
+: 모바일을 기준으로 시작해서 점차 큰 미디어로 구간을 잡는다
+
+1. 데스크탑에 기준으로 하면 컨텐츠의 구성이 힘들어 진다.
+2. 모바일 디바이스 중에 미디어쿼리를 지원하지 않는 브라우저가 있기 때문에 모바일을 미디어쿼리에 넣지 않는다.
+
+http://hanpixel.com/07/
+*/
+
+
+.inner img { width: 100%;  }
+.product { float: left; width: 100%; box-sizing: border-box; padding: 0 15px; margin-bottom: 15px; }
+
+.container { margin: 15px auto 0 ; padding: 0 15px; }
+.row { margin:0 -15px; }
+
+@media (min-width:768px){
+    .container { width: 750px; }
+    .product { width: 50%;}
+}
+
+@media (min-width:992px){
+    
+    .container { width: 970px; }
+    .product { width: 33.3%;}
+
+}
+
+@media (min-width:1200px){
+    .container { width: 1170px; }
+    .product { width: 25%;}
+}

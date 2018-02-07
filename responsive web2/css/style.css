@@ -1,0 +1,208 @@
+/* div와 인라인 태그 속성 파악하기
+div { background:red; width: 200px; padding:0 50px; }
+a { background:green; }*/
+/*========================================================================================*/
+.test { width: 200px; height: 200px; background:red; padding : 50px; border:10px solid blue;
+
+        box-sizing:border-box;}
+/*========================================================================================*/
+/*calc가 필요한 것.*/
+
+.container { border: 5px solid red; max-width:1000px; margin: 40px auto; overflow: hidden;}
+/*%로 하면 창의 크기에 따라 유동적으로 바뀜. 
+max-width 창의 크기에 따라 유동적으로 바뀌다가 1000이 되었을 때는 더 이상 늘어나지 않음. */
+
+.box { height:200px; 
+/*    width:25%; */
+    float:left; border: 2px solid green; margin: 0 10px; width:calc(25% - 24px);
+    transition: all .6s ease;
+} 
+/*
+넓이의 250px가 잡혀있으면 창의 크기가 바뀔 때 마다 아래쪽으로 내려가게 됨. 네 개의 사각형을 붙어있게 하기 위해서 25%로 
+잡아줄 수 있다. 
+
+calc 사이 '-' 반드시 띄어주기
+그러나 margin을 생각해서 25%-(margin)20px; 또는 230px한다.
+width:calc(25% - 20px);을 하면 창의 크기에 따라 네개의 사각형이 같이 움직인다.
+}
+*/
+
+.box1{ background-color: blueviolet; }
+.box2{ background-color: fuchsia; }
+.box3{ background-color: deepskyblue; }
+.box4{ background-color: yellowgreen; }
+
+
+/*태블릿*/
+@media screen and ( max-width:768px ){
+    .box { width: calc(50% - 24px);}
+    
+}
+
+/*모바일*/
+@media screen and ( max-width:480px ) {
+    .box { width: 100%; margin:0; border:0; }
+    
+}
+
+/*========================================================================================*/
+
+/*calc가 필요없는 것.*/
+
+.wrap { max-width:1000px; border:5px solid red;  margin: 40px auto; 
+
+    overflow: hidden;} 
+
+.nemo { height:200px; background-color: #999; float:left; 
+        width: 25%
+}
+
+.inner { height: 100%; margin: 0 10px; }
+.nemo1 .inner { background-color: dodgerblue; }
+.nemo2 .inner { background-color: bisque;}
+.nemo3 .inner { background-color: chartreuse; }
+.nemo4 .inner { background-color: lightgoldenrodyellow;}
+
+.row { margin-left:-10px; margin-right: -10px; }
+/*넘치게 만드는 것*/
+
+@media screen and ( max-width:768px ) { 
+    .nemo { width: 50%; } 
+}
+
+/*========================================================================================*/
+/*
+내가 한 것 
+
+*{ margin:0; padding:0;}
+body { background:#2f2f36 ;}
+
+.exam { max-width: 1200px; background-color: white; margin:40px auto; 
+        overflow: hidden; }
+.content { margin: 5px; }
+.grid { height:160px; float:left; margin: 5px;  }
+.grid1 { width:936px;  background-color: peru;}
+.grid2 { width:234px;  background-color: cornflowerblue;}
+
+.grid3 { width:460px; background-color: lightcoral;}
+.grid4 { width:230px; background-color: lightpink;}
+.grid5 { width:345px; background-color: lightseagreen;}
+.grid6 { width:115px; background-color: orchid;}
+
+.grid7 { width:287.5px;  background-color: olivedrab;}
+.grid8 { width:287.5px; background-color: lightsalmon;}
+.grid9 { width:287.5px; background-color: yellowgreen;}
+.grid10 { width:287.5px; background-color: steelblue;}
+
+@media screen and (max-width:900px){
+    .content { width:75%};
+}
+
+@media screen and (max-width:600px){
+    .content { width:50%};
+}
+
+@media screen and (max-width:300px){
+    .content { width:25%};
+}
+*/
+
+/*========================================================================================*/
+
+*{ margin:0; padding:0;}
+body { background:#2f2f36 ;}
+
+.exam { max-width: 1200px; margin:60px auto;}
+
+.grid1 .in { background-color: peru;}
+.grid2 .in{ background-color: cornflowerblue;}
+
+.grid3 .in{ background-color: lightcoral;}
+.grid4 .in{ background-color: lightpink;}
+.grid5 .in{ background-color: lightseagreen;}
+.grid6 .in{ background-color: orchid;}
+
+.grid7 .in{ background-color: olivedrab;}
+.grid8 .in{ background-color: lightsalmon;}
+.grid9 .in{ background-color: yellowgreen;}
+.grid10 .in{ background-color: steelblue;}
+
+.grid1{ width:80%; }
+.grid2{ width:20%; }
+.grid3{ width:40%; }
+.grid4{ width:20%; }
+.grid5{ width:30%; }
+.grid6{ width:10%; }
+.grid7{ width:25%; }
+.grid8{ width:25%; }
+.grid9{ width:25%; }
+.grid10{ width:25%; }
+
+.grid { float: left; }
+.grid .in { height:140px; text-align:center; color:#fff; line-height: 140px; }
+
+/*
+!margin 주는 법 3가지!
+
+1
+.grid .in { margin:5px; }
+.content { overflow: hidden; background:white; padding: 5px;  }
+
+2
+.grid .in { margin-right: 10px; margin-bottom: 10px; }
+.content { overflow: hidden; background-color: white; padding-top: 10px; padding-left: 10px;}
+
+3
+*/
+.grid .in{border:5px solid #fff; box-sizing: border-box;}
+.content { border: 5px solid #fff; overflow: hidden; box-sizing: border-box;}
+
+.exam{ padding: 0 50px;} 
+/*창크기 줄일때 여백 유지하면서 줄이도록*/
+
+@media screen and (max-width:1024px){
+
+.grid { width:33.33% }
+.grid1{ width:100%; }
+}
+
+@media screen and (max-width:768px){
+.exam { margin:0; padding: 0;}
+
+    .grid { width: 50% ; }
+    .grid1, .grid10{ width: 100% ; }
+}
+
+@media screen and (max-width:480px){
+.exam { margin:0; padding: 0;}
+    .grid{width: 100%; }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+118

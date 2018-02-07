@@ -1,0 +1,50 @@
+/*초기화*/
+* { margin:0; padding:0; }
+a { text-decoration: none; }
+li { list-style: none; }
+img { vertical-align: top; }
+
+.container {margin:20px auto; border : 1px solid #ccc;}
+header{  background: url(../images/bg.png) center; }
+h1 { color:yellow; padding: 20px; }
+
+
+nav{background:#c13333;}
+.menu{ overflow:hidden; }
+.menu li{float:left;}
+.menu li a { display: block; text-align: center; font-size:12px; color:white; font-weight: bold; height: 60px; line-height: 60px; padding: 0 20px; }
+
+section { font-size: 12px; line-height: 24px; padding: 20px; }
+footer { height: 60px; background: #000; clear: both; }
+
+/*데스크탑*/
+@media screen and ( min-width: 1024px ){
+    .container { width: 960px; }
+    header{  height: 280px;  }
+    h1 { font-size:40px; }
+    
+    section{ width: 660px; float: left; }
+    aside { width: 260px; float: right; }
+    aside img { width: 100%; }
+    
+}
+
+/*태블릿*/
+@media screen and ( min-width: 600px ) and ( max-width: 1023px ) {
+    .container { width: 580px; }
+    header{  height: 200px;  }
+    h1 {  font-size:30px; }
+    aside img { width: 33.33%; float: left; }
+}
+
+/*모바일*/
+@media screen and ( max-width: 599px) {
+     .container { width: 320px; }
+    header{  height: 100px;   }
+    h1 { padding: 10px; font-size:20px; }
+    .menu li { float:none; }
+    .menu li a { height: 30px; line-height: 30px; }
+    
+    section{ padding: 10px;}
+    aside img { width: 100%; }
+}
